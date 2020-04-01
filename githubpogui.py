@@ -50,7 +50,7 @@ def jojorun(): #company A when run
 		df.to_excel(destinationkey, sheet_name='PO', index = False)
 		print(destinationkey)
 
-	output_button = tk.Button(window, text="Select Destination", command = loadtemplate, width=10)
+	output_button = tk.Button(window, text="Select Destination & Convert", command = loadtemplate, width=28)
 	output_button.grid(row=0, column=4)
 	
 window=Tk()
@@ -68,7 +68,7 @@ def company_input():
 	#makes it so that the input is not case sensitive
 	x = input_company.lower()
 	if x == "company a" or x== "a":
-		import_button = tk.Button(window, text="Import PDF & Convert", command=jojorun)
+		import_button = tk.Button(window, text="Import PDF", command=jojorun)
 		import_button.grid(row=0, column = 2)
 		newlabel = tk.Label(window, text="Company A is selected")
 		newlabel.grid(row=1, column=0)
