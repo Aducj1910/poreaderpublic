@@ -3,6 +3,11 @@ from tkinter import *
 import tkinter as tk
 from tkinter import filedialog
 
+
+	
+window=Tk()
+window.title("PO Reader Alpha")#Title
+
 def newcompany(): #for future companies input
 	pass
 
@@ -48,13 +53,12 @@ def jojorun(): #company A when run
 		df = pd.DataFrame(lines)
 		destinationkey = destinationkey.replace("/", "\\")
 		df.to_excel(destinationkey, sheet_name='PO', index = False)
-		print(destinationkey)
+		success_label = tk.Label(window, text="Success!")
+		success_label.grid(row=2, column=0)
+		
 
 	output_button = tk.Button(window, text="Select Destination & Convert", command = loadtemplate, width=28)
 	output_button.grid(row=0, column=4)
-	
-window=Tk()
-window.title("PO Reader Alpha")#Title
 
 entry_company = Entry(window, text="Enter Company Name")
 #user can input either "company a" or just "a"
